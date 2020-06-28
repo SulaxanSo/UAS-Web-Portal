@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+
+    <title>Example Leaflet</title>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbMzBydUepl6YPmkSxXTIe3W6OqMP_ZpA" async defer></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+    <script src='https://unpkg.com/leaflet.gridlayer.googlemutant@latest/Leaflet.GoogleMutant.js'></script>
+
+  </head> 
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    html, body, #mapid {
+      height: 100%;
+    }
+  </style>
+
+  <body>
+    <div id="mapid"></div>
+    <script>
+
+    var mymap = L.map('mapid').setView([51.945261,7.572230], 16); //center coordinates, zoom
+
+    var baseLayer = L.gridLayer.googleMutant({
+      type: 'satellite', // valid values are 'roadmap', 'satellite', 'terrain' and 'hybrid'
+      attribution: "Google Mutant"
+    });
+    mymap.addLayer(baseLayer);
+
+    var blueLayer = L.tileLayer.wms("http://10.6.1.10:8080/geoserver/uas2020_workspace/wms", {
+        layers: 'uas2020_workspace:Multispectral_2_transparent_mosaic_blue',
+        format: 'image/png',
+        transparent: true,
+        opacity: 0.7
+    });
+    mymap.addLayer(blueLayer);
+
+    var greenLayer = L.tileLayer.wms("http://10.6.1.10:8080/geoserver/uas2020_workspace/wms", {
+        layers: 'uas2020_workspace:Multispectral_2_transparent_mosaic_green',
+        format: 'image/png',
+        transparent: true,
+        opacity: 0.7
+    });
+    mymap.addLayer(greenLayer);
+
+    var redLayer = L.tileLayer.wms("http://10.6.1.10:8080/geoserver/uas2020_workspace/wms", {
+        layers: 'uas2020_workspace:Multispectral_2_transparent_mosaic_red',
+        format: 'image/png',
+        transparent: true,
+        opacity: 0.7
+    });
+    mymap.addLayer(redLayer);
+
+    var orthomosaic = L.layerGroup([greenLayer, blueLayer, redLayer]);
+
+    var overlayMaps = {
+      "blue": blueLayer,
+      "green": greenLayer,
+      "red": redLayer
+    };
+
+    L.control.layers(null, overlayMaps).addTo(mymap);
+    
+    </script>
+</html>
