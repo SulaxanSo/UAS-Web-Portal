@@ -46,7 +46,13 @@
         }
       }
         
-        #map{ width: 900px; height: 500px; }
+        #map{height: 500px;}
+        
+        [type="file"] {
+          height: 0;
+          overflow: hidden;
+          width: 0;
+        }
     </style>
     <!-- Custom styles for this template -->
     <link href="index.css" rel="stylesheet">
@@ -57,7 +63,7 @@
   <a class="navbar-brand-two mr-0 px-3" style="color:white">Unmanned Aerial Systems for applied research - Westfälische Wilhelms-Universität Münster</a>
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-        <a class="btn btn-primary" href="signin.php?action=signOut" >Sign out</a>    
+        <a class="btn btn-primary" href="signin.html" >Sign out</a>    
     </li>
   </ul>
 </nav>
@@ -68,31 +74,31 @@
       <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="index">
+            <a class="nav-link" href="index.html">
               <span data-feather="home"></span>
-              Home <span class="sr-only">(current)</span>
+              Home
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="orthomosaic">
+            <a class="nav-link" href="orthomosaic.html">
               <span data-feather="layers"></span>
               Orthomosaic
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="landcover">
+            <a class="nav-link" href="landcover.html">
               <span data-feather="map"></span>
-              Land Cover Map
-            </a>
+              Land Cover Map 
+            </a> 
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="erosionraster">
+            <a class="nav-link active" href="erosionraster.html">
               <span data-feather="grid"></span>
-              Erosion Raster
+              Erosion Raster <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="aboutus">
+            <a class="nav-link" href="aboutus.html">
               <span data-feather="users"></span>
               About Us
             </a>
@@ -107,153 +113,29 @@
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" onclick="exportRaster()" class="btn btn-sm btn-outline-secondary">Export</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
           </div>
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar"></span>
-            This week
-          </button>
+        </div>
+        <div>
+            <input type='file' id="file" onchange='loadFile(event)'>
+            <label for="file" class="btn btn-sm btn-outline-secondary"> 
+                <span data-feather="file"></span> 
+                Upload GeoJSON to Map
+            </label>
         </div>
       </div>
 
       <p id="map"></p>
-        
-      <h2>Section title</h2>
-      <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Header</th>
-              <th>Header</th>
-              <th>Header</th>
-              <th>Header</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>Lorem</td>
-              <td>ipsum</td>
-              <td>dolor</td>
-              <td>sit</td>
-            </tr>
-            <tr>
-              <td>1,002</td>
-              <td>amet</td>
-              <td>consectetur</td>
-              <td>adipiscing</td>
-              <td>elit</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>Integer</td>
-              <td>nec</td>
-              <td>odio</td>
-              <td>Praesent</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>libero</td>
-              <td>Sed</td>
-              <td>cursus</td>
-              <td>ante</td>
-            </tr>
-            <tr>
-              <td>1,004</td>
-              <td>dapibus</td>
-              <td>diam</td>
-              <td>Sed</td>
-              <td>nisi</td>
-            </tr>
-            <tr>
-              <td>1,005</td>
-              <td>Nulla</td>
-              <td>quis</td>
-              <td>sem</td>
-              <td>at</td>
-            </tr>
-            <tr>
-              <td>1,006</td>
-              <td>nibh</td>
-              <td>elementum</td>
-              <td>imperdiet</td>
-              <td>Duis</td>
-            </tr>
-            <tr>
-              <td>1,007</td>
-              <td>sagittis</td>
-              <td>ipsum</td>
-              <td>Praesent</td>
-              <td>mauris</td>
-            </tr>
-            <tr>
-              <td>1,008</td>
-              <td>Fusce</td>
-              <td>nec</td>
-              <td>tellus</td>
-              <td>sed</td>
-            </tr>
-            <tr>
-              <td>1,009</td>
-              <td>augue</td>
-              <td>semper</td>
-              <td>porta</td>
-              <td>Mauris</td>
-            </tr>
-            <tr>
-              <td>1,010</td>
-              <td>massa</td>
-              <td>Vestibulum</td>
-              <td>lacinia</td>
-              <td>arcu</td>
-            </tr>
-            <tr>
-              <td>1,011</td>
-              <td>eget</td>
-              <td>nulla</td>
-              <td>Class</td>
-              <td>aptent</td>
-            </tr>
-            <tr>
-              <td>1,012</td>
-              <td>taciti</td>
-              <td>sociosqu</td>
-              <td>ad</td>
-              <td>litora</td>
-            </tr>
-            <tr>
-              <td>1,013</td>
-              <td>torquent</td>
-              <td>per</td>
-              <td>conubia</td>
-              <td>nostra</td>
-            </tr>
-            <tr>
-              <td>1,014</td>
-              <td>per</td>
-              <td>inceptos</td>
-              <td>himenaeos</td>
-              <td>Curabitur</td>
-            </tr>
-            <tr>
-              <td>1,015</td>
-              <td>sodales</td>
-              <td>ligula</td>
-              <td>in</td>
-              <td>libero</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      
+
+  <div id="infocontainer" class="jumbotron">
+    <h3>More on Erosion Raster</h3>
+    <p class="lead">Erosion raster is meant to indicate the erosion of the ground along the river for a period of time. The erosion raster which is a product by 3D data team was build by comparing two point clouds, one from 2018 and the other from 2020. The points were filtered in order to consider only ground points, so other features like trees were eliminated. This was done with cloudcompare program. DTM was created for both clouds and the area included was 15m on each side of the river. The difference in elevation between 2018 and 2020 was calculated by taking as a reference DTM 2018 and the change in values. For this purpose ArcGis Pro was used.
+</p>
+  </div>
     </main>
   </div>
 </div>
-<script>
-  function exportRaster() {
-    window.open("http://10.6.1.10:8080/geoserver/uas2020_workspace/wcs?service=WCS&version=1.0.0&request=GetCoverage&layers=uas2020_workspace%3Adeposition_final&bbox=401804.07101897895%2C5755787.711348116%2C401945.6710158142%2C5755966.3513441235&width=608&height=768&format=geotiff&coverage=uas2020_workspace%3Adeposition_final&crs=EPSG%3A32632");
-}
-</script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>

@@ -37,3 +37,33 @@ var baseMaps = {
 };
 
 map.addControl(new L.Control.Fullscreen());
+
+var layerControl = new L.control.layers(baseMaps).addTo(map);
+
+var loadFile = function(event) {
+    // Init
+    var input = event.target;
+    var reader = new FileReader();
+
+    // Invoked when file is loading. 
+    reader.onload = function(){
+        // parse content to JSON object
+        var filecontent = reader.result;
+        var geojson = JSON.parse(filecontent);
+        
+        // define the gjson object as leaflet layer
+        var parsedLayer = new L.geoJson(geojson);
+
+        // add layer to map & layerControl
+        parsedLayer.addTo(map);
+        //layerControl.addOverlay(parsedLayer, name);
+        layerControl.addOverlay(parsedLayer, "geojson");
+        //zoom to added layer
+        map.fitBounds(parsedLayer.getBounds());
+    };
+    
+    //Read the text
+    reader.readAsText(input.files[0]);
+   
+};
+
