@@ -67,3 +67,29 @@ var loadFile = function(event) {
    
 };
 
+var boundary = L.tileLayer.wms("http://10.6.1.10:8080/geoserver/uas2020_workspace/wms", {
+        layers: 'uas2020_workspace:boundary',
+        format: 'image/png',
+        transparent: true,
+        opacity: 0.7
+    });
+
+layerControl.addOverlay(boundary, "Boundary");
+
+var bounds = L.tileLayer.wms("http://10.6.1.10:8080/geoserver/uas2020_workspace/wms", {
+        layers: 'uas2020_workspace:bounds',
+        format: 'image/png',
+        transparent: true,
+        opacity: 0.7
+    });
+
+layerControl.addOverlay(bounds, "Bounds");
+
+var riverline = L.tileLayer.wms("http://10.6.1.10:8080/geoserver/uas2020_workspace/wms", {
+        layers: 'uas2020_workspace:river_centerline',
+        format: 'image/png',
+        transparent: true,
+        opacity: 0.7
+    });
+
+layerControl.addOverlay(riverline, "River Line");
