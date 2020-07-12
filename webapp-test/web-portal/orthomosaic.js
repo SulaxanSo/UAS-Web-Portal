@@ -5,4 +5,12 @@ var orthomosaic_rgb = L.tileLayer.wms("http://10.6.1.10:8080/geoserver/uas2020_w
         opacity: 0.7
     });
 map.addLayer(orthomosaic_rgb);
-layerControl.addOverlay(orthomosaic_rgb, "RGB Orthomosaic");
+
+    var overlayMaps = {
+      "RGB Orthomosaic": orthomosaic_rgb
+    };
+
+// change between the layers
+L.control.layers(baseMaps, overlayMaps).addTo(map);
+
+console.log(orthomosaic_rgb.getBounds());

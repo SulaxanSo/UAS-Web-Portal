@@ -48,13 +48,7 @@
         }
       }
         
-        #map{height: 500px;}
-        
-        [type="file"] {
-          height: 0;
-          overflow: hidden;
-          width: 0;
-        }
+        #map{ width: 900px; height: 500px; }
     </style>
     <!-- Custom styles for this template -->
     <link href="index.css" rel="stylesheet">
@@ -65,7 +59,7 @@
   <a class="navbar-brand-two mr-0 px-3" style="color:white">Unmanned Aerial Systems for applied research - Westfälische Wilhelms-Universität Münster</a>
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-        <a class="btn btn-primary" href="signin.html" >Sign out</a>    
+        <a class="btn btn-primary" href="signin.php?action=signOut" >Sign out</a>    
     </li>
   </ul>
 </nav>
@@ -76,31 +70,31 @@
       <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link active" href="index">
               <span data-feather="home"></span>
-              Home
+              Home <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="orthomosaic.html">
+            <a class="nav-link" href="orthomosaic">
               <span data-feather="layers"></span>
               Orthomosaic
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="landcover.html">
+            <a class="nav-link" href="landcover">
               <span data-feather="map"></span>
-              Land Cover Map <span class="sr-only">(current)</span>
-            </a> 
+              Land Cover Map
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="erosionraster.html">
+            <a class="nav-link" href="erosionraster">
               <span data-feather="grid"></span>
               Erosion Raster
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="aboutus.html">
+            <a class="nav-link" href="aboutus">
               <span data-feather="users"></span>
               About Us
             </a>
@@ -115,28 +109,153 @@
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            <button type="button" onclick="exportRaster()" class="btn btn-sm btn-outline-secondary">Export</button>
           </div>
-        </div>
-        <div>
-            <input type='file' id="file" onchange='loadFile(event)'>
-            <label for="file" class="btn btn-sm btn-outline-secondary"> 
-                <span data-feather="file"></span> 
-                Upload GeoJSON to Map
-            </label>
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <span data-feather="calendar"></span>
+            This week
+          </button>
         </div>
       </div>
 
       <p id="map"></p>
-        <div id="infocontainer" class="jumbotron">
-    <h3>More on Land Cover Map</h3>
-    <p class="lead">Land Cover Map by Automated Workflow group is a product resulting from Random Forest classifier and has an accuracy of 0,7808. It was run with docker in GRASS and has five classes: water, roads, trees, agriculture and grass.
-
-</p>
-  </div>
+        
+      <h2>Section title</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Header</th>
+              <th>Header</th>
+              <th>Header</th>
+              <th>Header</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1,001</td>
+              <td>Lorem</td>
+              <td>ipsum</td>
+              <td>dolor</td>
+              <td>sit</td>
+            </tr>
+            <tr>
+              <td>1,002</td>
+              <td>amet</td>
+              <td>consectetur</td>
+              <td>adipiscing</td>
+              <td>elit</td>
+            </tr>
+            <tr>
+              <td>1,003</td>
+              <td>Integer</td>
+              <td>nec</td>
+              <td>odio</td>
+              <td>Praesent</td>
+            </tr>
+            <tr>
+              <td>1,003</td>
+              <td>libero</td>
+              <td>Sed</td>
+              <td>cursus</td>
+              <td>ante</td>
+            </tr>
+            <tr>
+              <td>1,004</td>
+              <td>dapibus</td>
+              <td>diam</td>
+              <td>Sed</td>
+              <td>nisi</td>
+            </tr>
+            <tr>
+              <td>1,005</td>
+              <td>Nulla</td>
+              <td>quis</td>
+              <td>sem</td>
+              <td>at</td>
+            </tr>
+            <tr>
+              <td>1,006</td>
+              <td>nibh</td>
+              <td>elementum</td>
+              <td>imperdiet</td>
+              <td>Duis</td>
+            </tr>
+            <tr>
+              <td>1,007</td>
+              <td>sagittis</td>
+              <td>ipsum</td>
+              <td>Praesent</td>
+              <td>mauris</td>
+            </tr>
+            <tr>
+              <td>1,008</td>
+              <td>Fusce</td>
+              <td>nec</td>
+              <td>tellus</td>
+              <td>sed</td>
+            </tr>
+            <tr>
+              <td>1,009</td>
+              <td>augue</td>
+              <td>semper</td>
+              <td>porta</td>
+              <td>Mauris</td>
+            </tr>
+            <tr>
+              <td>1,010</td>
+              <td>massa</td>
+              <td>Vestibulum</td>
+              <td>lacinia</td>
+              <td>arcu</td>
+            </tr>
+            <tr>
+              <td>1,011</td>
+              <td>eget</td>
+              <td>nulla</td>
+              <td>Class</td>
+              <td>aptent</td>
+            </tr>
+            <tr>
+              <td>1,012</td>
+              <td>taciti</td>
+              <td>sociosqu</td>
+              <td>ad</td>
+              <td>litora</td>
+            </tr>
+            <tr>
+              <td>1,013</td>
+              <td>torquent</td>
+              <td>per</td>
+              <td>conubia</td>
+              <td>nostra</td>
+            </tr>
+            <tr>
+              <td>1,014</td>
+              <td>per</td>
+              <td>inceptos</td>
+              <td>himenaeos</td>
+              <td>Curabitur</td>
+            </tr>
+            <tr>
+              <td>1,015</td>
+              <td>sodales</td>
+              <td>ligula</td>
+              <td>in</td>
+              <td>libero</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
   </div>
 </div>
+<script>
+  function exportRaster() {
+    window.open("http://10.6.1.10:8080/geoserver/uas2020_workspace/wcs?service=WCS&version=1.0.0&request=GetCoverage&layers=uas2020_workspace%3ALandCoverMap&bbox=401793.9018%2C5755752.6211%2C401994.6374%2C5755969.2929&width=711&height=768&format=geotiff&coverage=uas2020_workspace%3ALandCoverMap&crs=EPSG%3A32632");
+}
+</script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>

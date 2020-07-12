@@ -5,4 +5,10 @@ var landcovermap = L.tileLayer.wms("http://10.6.1.10:8080/geoserver/uas2020_work
         opacity: 0.7
     });
 map.addLayer(landcovermap);
-layerControl.addOverlay(landcovermap, "Land Cover Map");
+
+    var overlayMaps = {
+      "Land Cover Map": landcovermap
+    };
+
+// change between the layers
+L.control.layers(baseMaps, overlayMaps).addTo(map);

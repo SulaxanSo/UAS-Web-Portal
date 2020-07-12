@@ -42,27 +42,6 @@
           font-size: 3.5rem;
         }
       }
-        
-        .flex-equal > * {
-  -ms-flex: 1;
-  flex: 1;
-}
-@media (min-width: 768px) {
-  .flex-md-equal > * {
-    -ms-flex: 1;
-    flex: 1;
-  }
-}
-        .bg-dark-before{
-    background-image: url('before.png');
-            background-size: 100%;
-}
-        .bg-light-after{
-    background-image: url('after.png');
-            background-size: 100%;
-}
-        .overflow-hidden { overflow: hidden; }
-        
     </style>
     <!-- Custom styles for this template -->
     <link href="index.css" rel="stylesheet">
@@ -73,7 +52,7 @@
   <a class="navbar-brand-two mr-0 px-3" style="color:white">Unmanned Aerial Systems for applied research - Westfälische Wilhelms-Universität Münster</a>
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-        <a class="btn btn-primary" href="signin.html" >Sign out</a>    
+        <a class="btn btn-primary" href="signin.php?action=signOut" >Sign out</a>    
     </li>
   </ul>
 </nav>
@@ -84,31 +63,31 @@
       <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">
+            <a class="nav-link active" href="index">
               <span data-feather="home"></span>
               Home <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="orthomosaic.html">
+            <a class="nav-link" href="orthomosaic">
               <span data-feather="layers"></span>
               Orthomosaic
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="landcover.html">
+            <a class="nav-link" href="landcover">
               <span data-feather="map"></span>
               Land Cover Map
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="erosionraster.html">
+            <a class="nav-link" href="erosionraster">
               <span data-feather="grid"></span>
               Erosion Raster
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="aboutus.html">
+            <a class="nav-link" href="aboutus">
               <span data-feather="users"></span>
               About Us
             </a>
@@ -118,27 +97,11 @@
     </nav>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-  <div>
-    <h1 class="display-4 font-weight-normal">Welcome to our web-portal!</h1>
-    <p class="lead font-weight-normal">This web-portal was developed in the study project “Unmanned aerial systems for applied research” in the summer term 2020 at the University of Muenster in Germany. The general aim of this study project is to monitor the conservation process of the renaturated river Aa in the south of Muenster in Germany.</p>
-    <a class="btn btn-outline-secondary" href="aboutus.html">You want to know more about us?</a>
-  </div>
-  <div class="product-device shadow-sm d-none d-md-block"></div>
-  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-</div>
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3" style="height: 450px">
-  <div class="bg-dark-before mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-    <div class="my-3 py-3">
-      <h2 class="display-5">Before</h2>
-    </div>
-  </div>
-  <div class="bg-light-after mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-    <div class="my-3 py-3">
-      <h2 class="display-5">After</h2>
-    </div>
-  </div>
-</div>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Home</h1>
+      </div>
+        <h4>Welcome to our web-portal! This web-portal was developed in the study project “Unmanned aerial systems for applied research” in the summer term 2020 at the University of Muenster in Germany. The general aim of this study project is to monitor the conservation process of the renaturated river Aa in the south of Muenster in Germany. We, as the web-portal team, are tasked to develop a web-based portal that visualizes captured imageries. Before being ready for visualization, these imageries were pre-processed by some other project teams, namely the ​Automated workflow team and the ​Image Analysis​ team.</h4>
+        
     </main>
   </div>
 </div>
