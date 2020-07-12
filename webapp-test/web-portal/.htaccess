@@ -1,0 +1,20 @@
+RewriteEngine On
+
+Redirect /index.php /something.html
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^index/?$ index.php [NC]
+
+RewriteRule ^signin/?$ signin.php [NC]
+
+RewriteRule ^signin\?(.*)/?$ singin.php?$1 [NC]
+
+RewriteRule ^orthomosaic/?$ orthomosaic.php [NC]
+
+RewriteRule ^landcover/?$ landcover.php [NC]
+
+RewriteRule ^erosionraster/?$ erosionraster.php [NC]
+
+RewriteRule ^aboutus/?$ aboutus.php [NC]
+
