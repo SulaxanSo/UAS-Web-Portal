@@ -103,7 +103,7 @@
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            <button type="button" onclick="exportRaster()" class="btn btn-sm btn-outline-secondary">Export</button>
           </div>
           <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
             <span data-feather="calendar"></span>
@@ -245,6 +245,11 @@
     </main>
   </div>
 </div>
+<script>
+  function exportRaster() {
+    window.open("http://10.6.1.10:8080/geoserver/uas2020_workspace/wcs?service=WCS&version=1.0.0&request=GetCoverage&layers=uas2020_workspace%3AUAS2020_Multispectral_transparent_mosaic_group1&bbox=401793.96284000005%2C5755754.5486200005%2C401992.67564000003%2C5755968.106380001&width=714&height=768&format=geotiff&coverage=uas2020_workspace%3AUAS2020_Multispectral_transparent_mosaic_group1&crs=EPSG%3A32632");
+}
+</script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
