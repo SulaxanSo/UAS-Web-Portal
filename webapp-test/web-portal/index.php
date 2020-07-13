@@ -28,6 +28,13 @@
 <link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
 
     <style>
+	#background {
+          background: url("ian-usher-JPAfSd_acI8-unsplash.jpg") no-repeat center center fixed; 
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -77,10 +84,10 @@
   </ul>
 </nav>
 
-<div class="container-fluid">
+<div id="background" class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="sidebar-sticky pt-3">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+      <div class="sidebar-sticky pt-3" style="color:white">
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link active" href="index">
@@ -117,11 +124,11 @@
     </nav>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-      <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+      <div id="background-container" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
   <div>
     <h1 class="display-4 font-weight-normal">Welcome to our web-portal!</h1>
     <p class="lead font-weight-normal">This web-portal was developed in the study project “Unmanned aerial systems for applied research” in the summer term 2020 at the University of Muenster in Germany. The general aim of this study project is to monitor the conservation process of the renaturated river Aa in the south of Muenster in Germany.</p>
-    <a class="btn btn-outline-secondary" href="aboutus">You want to know more about us?</a>
+    <a class="btn btn-outline-light" href="aboutus">You want to know more about us?</a>
   </div>
   <div class="product-device shadow-sm d-none d-md-block"></div>
   <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>

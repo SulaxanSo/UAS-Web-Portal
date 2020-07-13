@@ -27,6 +27,13 @@
 <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
       
     <style>
+	#background {
+          background: url("ian-usher-JPAfSd_acI8-unsplash.jpg") no-repeat center center fixed; 
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -64,10 +71,10 @@
   </ul>
 </nav>
 
-<div class="container-fluid">
+<div id="background" class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="sidebar-sticky pt-3">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+      <div class="sidebar-sticky pt-3" style="color:white">
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link" href="index">
@@ -108,13 +115,12 @@
         <h1 class="h2">Orthomosaic</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" onclick="exportRaster()" class="btn btn-sm btn-outline-secondary">Export</button>
+            <button type="button" onclick="exportRaster()" class="btn btn-sm btn-outline-light">Export</button>
           </div>
         </div>
         <div>
             <input type='file' id="file" onchange='loadFile(event)'>
-            <label for="file" class="btn btn-sm btn-outline-secondary"> 
+            <label for="file" class="btn btn-sm btn-outline-light"> 
                 <span data-feather="file"></span> 
                 Upload GeoJSON to Map
             </label>
@@ -122,7 +128,7 @@
       </div>
 
       <p id="map"></p>
-        <div id="infocontainer" class="jumbotron">
+        <div id="background-container" class="jumbotron">
     <h3>More on Orthomosaics</h3>
     <p class="lead">The orthomosaic is generated from a number of raw aerial photographs that are stitched together using appropriate geolocated images in Pix4D. The resulting image feature detailed ground surface with high spatial resolution. Preprocessing stage was carried out for 2020 RGB and Multispectral datasets that rendered products like orthomosaic, point clouds and DSM which were utilized for further analysis.
 </p>

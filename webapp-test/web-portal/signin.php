@@ -23,7 +23,11 @@
 
     <style>
         body {
-            background: rgba(0, 0, 0, .25);
+          background: url("ian-usher-JPAfSd_acI8-unsplash.jpg") no-repeat center center fixed; 
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
         }
         .text-center form{
           position: relative;
@@ -33,6 +37,7 @@
           transform: translateY(50%);
         }
         .form-signin {
+            background: rgba(0, 0, 0, .25);
           width: 100%;
           max-width: 330px;
           padding: 15px;
@@ -59,7 +64,13 @@
           border-top-left-radius: 0;
           border-top-right-radius: 0;
         }
-    </style>
+        h1{
+            color: white;
+        }
+        p{
+            color: white;
+        }    
+</style>
     <!-- Custom styles for this template -->
     <link href="index.css" rel="stylesheet">
   </head>
@@ -76,7 +87,7 @@
           <label for="inputPassword" class="sr-only">Password</label>
           <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
           <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="getInfo()">Sign in</button>
-          <p class="mt-5 mb-3 text-muted">&copy; Team Web-Portal 2020</p>
+          <p class="mt-5 mb-3">&copy; Team Web-Portal 2020</p>
         </form>
       </div>
 

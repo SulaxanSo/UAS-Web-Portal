@@ -22,6 +22,13 @@
 <link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
 
     <style>
+	#background {
+          background: url("ian-usher-JPAfSd_acI8-unsplash.jpg") no-repeat center center fixed; 
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -51,10 +58,10 @@
   </ul>
 </nav>
 
-<div class="container-fluid">
+<div id="background" class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="sidebar-sticky pt-3">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+      <div class="sidebar-sticky pt-3" style="color:white">
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link" href="index">
@@ -94,37 +101,37 @@
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">About Us</h1>
       </div>
-      <div class="jumbotron">
+      <div id="background-container" class="jumbotron">
     <h3>Project Management</h3>
-    <p class="lead">Project management's main duty was to coordinate all teams together, functioning as a bridge of communication between them. they monitored and tracked each groups' progress continuously and tried to support them on their goals. Beside promoting cooperation, they also prepared guidelines for mid-term and final report. To help better managing the project, various utilities were used like: Trello and Google Sheets for task management; Discord, Zoom and Whatapp for communication; Sciebo and Google Drive for repository.
+    <p class="lead">The main task of the project management team was to coordinate all teams together and act as a communication bridge between the teams. They also continuously monitored the progress of each group and supported the teams in achieving their goals part-time. In addition, they worked on the creation of guidelines and presentation slides. To manage the project smoothly, they used various utilities such as: Trello and Google Sheets for task management; Discord, Zoom and Whatsapp for communication; Sciebo and Google Drive for the repository.
 </p>
     <a class="btn btn-lg btn-primary" href="mailto:jparajul@uni-muenster.de" role="button">Contact Project Management Team &raquo;</a>
   </div>
-        <div id="infocontainer" class="jumbotron">
+        <div id="background-container" class="jumbotron">
     <h3>Image Analysis</h3>
     <p class="lead">Image Analysis group had to develop the  products: Orthomosaic, Change Detection and Habitat Map.
 </p>
     <a class="btn btn-lg btn-primary" href="mailto:rragagon@uni-muenster.de" role="button">Contact Image Analysis Team &raquo;</a>
   </div>
-        <div id="infocontainer" class="jumbotron">
+        <div id="background-container" class="jumbotron">
     <h3>Automated Workflow</h3>
     <p class="lead">Products developed by Automated Workflow group are: Orthophoto, Land Cover Map, Docker in GRASS code for classification and Docker in GRASS code for NDVI.
 </p>
     <a class="btn btn-lg btn-primary" href="mailto:gmolisse@uni-muenster.de" role="button">Contact Automated Workflow Team &raquo;</a>
   </div>
-        <div id="infocontainer" class="jumbotron">
+        <div id="background-container" class="jumbotron">
     <h3>3D Data Group</h3>
-    <p class="lead">Products developed by 3D data group are: Orthophoto, Digital Surface Model, Points Cloud, Deposition and Erosion Raster, Cross-sections, Deposition Volume, Section from Dem Compared sections and Flow simulation model.
+    <p class="lead">Products developed by 3D data group are: Orthophoto, Digital Surface Model (DSM), Digital Terrain Model (DTM), Classified Point Cloud, River line and cross-sections geometries, River width cross-section graphs, River morphology change cross-section graphs, Erosion/Deposition rasters and 3D fly-through animation
 </p>
     <a class="btn btn-lg btn-primary" href="mailto:s_koel08@uni-muenster.de" role="button">Contact 3D Data Group &raquo;</a>
   </div>
-        <div id="infocontainer" class="jumbotron">
+        <div id="background-container" class="jumbotron">
     <h3>ESRI Cloud</h3>
     <p class="lead">Tasks covered by Esri Cloud team are: Procedure for WAB, Data visualization from 3D Data group and visualization of some other products.
 </p>
     <a class="btn btn-lg btn-primary" href="mailto:cigwe@uni-muenster.de" role="button">Contact ESRI Cloud Team &raquo;</a>
   </div>
-        <div id="infocontainer" class="jumbotron">
+        <div id="background-container" class="jumbotron">
     <h3>Web Portal</h3>
     <p class="lead">Team of web portal developed this web page whose main purpose is to visualize products of other team members interactively and which can be accessed online by others. For building the webpage are used: Geoserver, Leaflet and PostgreSQL. Server was setup in cooperation with the ifgi server team.
 </p>

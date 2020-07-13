@@ -31,6 +31,13 @@
 <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
       
     <style>
+	#background {
+          background: url("ian-usher-JPAfSd_acI8-unsplash.jpg") no-repeat center center fixed; 
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -68,10 +75,10 @@
   </ul>
 </nav>
 
-<div class="container-fluid">
+<div id="background" class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="sidebar-sticky pt-3">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+      <div class="sidebar-sticky pt-3" style="color:white">
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link" href="index">
@@ -112,13 +119,12 @@
         <h1 class="h2">Erosion Raster</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" onclick="exportRaster()" class="btn btn-sm btn-outline-secondary">Export</button>
+            <button type="button" onclick="exportRaster()" class="btn btn-sm btn-outline-light">Export</button>
           </div>
         </div>
         <div>
             <input type='file' id="file" onchange='loadFile(event)'>
-            <label for="file" class="btn btn-sm btn-outline-secondary"> 
+            <label for="file" class="btn btn-sm btn-outline-light"> 
                 <span data-feather="file"></span> 
                 Upload GeoJSON to Map
             </label>
@@ -128,7 +134,7 @@
       <p id="map"></p>
       
 
-  <div id="infocontainer" class="jumbotron">
+  <div id="background-container" class="jumbotron">
     <h3>More on Erosion Raster</h3>
     <p class="lead">Erosion raster is meant to indicate the erosion of the ground along the river for a period of time. The erosion raster which is a product by 3D data team was build by comparing two point clouds, one from 2018 and the other from 2020. The points were filtered in order to consider only ground points, so other features like trees were eliminated. This was done with cloudcompare program. DTM was created for both clouds and the area included was 15m on each side of the river. The difference in elevation between 2018 and 2020 was calculated by taking as a reference DTM 2018 and the change in values. For this purpose ArcGis Pro was used.
 </p>
