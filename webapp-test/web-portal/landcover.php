@@ -145,7 +145,7 @@
 </div>
 <script>
   function exportRaster() {
-    window.open("http://10.6.1.10:8080/geoserver/uas2020_workspace/wcs?service=WCS&version=1.0.0&request=GetCoverage&layers=uas2020_workspace%3ALandCoverMap&bbox=401793.9018%2C5755752.6211%2C401994.6374%2C5755969.2929&width=711&height=768&format=geotiff&coverage=uas2020_workspace%3ALandCoverMap&crs=EPSG%3A32632");
+    window.open("https://geovm-mundus-web.uni-muenster.de/geoserver/uas2020_workspace/wcs?service=WCS&version=1.0.0&request=GetCoverage&layers=uas2020_workspace%3ALandCoverMap&bbox=401793.9018%2C5755752.6211%2C401994.6374%2C5755969.2929&width=711&height=768&format=geotiff&coverage=uas2020_workspace%3ALandCoverMap&crs=EPSG%3A32632");
 }
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
