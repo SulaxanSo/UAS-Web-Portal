@@ -72,7 +72,7 @@
           <li class="nav-item">
             <a class="nav-link" href="orthomosaic">
               <span data-feather="layers"></span>
-              Orthomosaic
+              Orthophoto
             </a>
           </li>
           <li class="nav-item">

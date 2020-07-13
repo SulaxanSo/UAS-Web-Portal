@@ -1,5 +1,5 @@
-var landcovermap = L.tileLayer.wms("https://geovm-mundus-web.uni-muenster.de/geoserver/uas2020_workspace/wms", {
-        layers: 'uas2020_workspace:LandCoverMap',
+var landcovermap = L.tileLayer.wms("https://geo-arcgis-srv.uni-muenster.de:6443/arcgis/services/ESRI_2020/Orthophoto/MapServer/WMSServer", {
+        layers: '0',
         format: 'image/png',
         transparent: true,
         opacity: 0.7
