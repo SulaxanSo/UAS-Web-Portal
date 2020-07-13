@@ -6,3 +6,16 @@ var landcovermap = L.tileLayer.wms("https://geovm-mundus-web.uni-muenster.de/geo
     });
 map.addLayer(landcovermap);
 layerControl.addOverlay(landcovermap, "Land Cover Map");
+
+var overlay = {
+    "landcovermap": landcovermap,
+    "boundary": boundary,
+    "bounds": bounds,
+    "riverline": riverline
+}
+
+//OpacityControl
+L.control.opacity(overlay,
+{
+   label: "Layers Opacity"
+}).addTo(map);

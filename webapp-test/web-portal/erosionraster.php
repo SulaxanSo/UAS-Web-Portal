@@ -29,7 +29,8 @@
    crossorigin=""></script>
       <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
-      
+      <script src="dist/L.Control.Opacity.js"></script>
+    <link href="dist/L.Control.Opacity.css" rel="stylesheet" />
     <style>
 	#background {
           background: url("ian-usher-JPAfSd_acI8-unsplash.jpg") no-repeat center center fixed; 
