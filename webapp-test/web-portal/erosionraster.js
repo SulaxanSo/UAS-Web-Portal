@@ -7,15 +7,19 @@ var erosionraster = L.tileLayer.wms("https://geovm-mundus-web.uni-muenster.de/ge
 map.addLayer(erosionraster);
 layerControl.addOverlay(erosionraster, "Erosion Raster");
 
-var overlay = {
-    "Erosion Raster": erosionraster,
-    "Boundary": boundary,
-    "Bounds": bounds,
-    "River Line": riverline
-}
-
-//OpacityControl
-L.control.opacity(overlay,
-{
-   label: "Layers Opacity"
-}).addTo(map);
+var legendErosion = L.control.htmllegend({
+        position: 'bottomright',
+        legends: [{
+        name: 'Erosion Raster',
+        layer: erosionraster,
+        opacity: 0.5,
+        elements: [{
+            html: '',
+        }]
+    }],
+        collapseSimple: true,
+        detectStretched: true,
+        visibleIcon: 'icon icon-eye',
+        hiddenIcon: 'icon icon-eye-slash'
+    })
+    map.addControl(legendErosion);

@@ -7,15 +7,19 @@ var orthomosaic_rgb = L.tileLayer.wms("https://geo-arcgis-srv.uni-muenster.de:64
 map.addLayer(orthomosaic_rgb);
 layerControl.addOverlay(orthomosaic_rgb, "Orthophoto");
 
-var overlay = {
-    "Orthophoto": orthomosaic_rgb,
-    "Boundary": boundary,
-    "Bounds": bounds,
-    "River Line": riverline
-}
-
-//OpacityControl
-L.control.opacity(overlay,
-{
-   label: "Layers Opacity"
-}).addTo(map);
+var legendOrtho = L.control.htmllegend({
+        position: 'bottomright',
+        legends: [{
+        name: 'Orthomosaic RGB',
+        layer: orthomosaic_rgb,
+        opacity: 0.5,
+        elements: [{
+            html: '',
+        }]
+    }],
+        collapseSimple: true,
+        detectStretched: true,
+        visibleIcon: 'icon icon-eye',
+        hiddenIcon: 'icon icon-eye-slash'
+    })
+    map.addControl(legendOrtho);

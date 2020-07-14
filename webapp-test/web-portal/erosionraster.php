@@ -29,8 +29,11 @@
    crossorigin=""></script>
       <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
-      <script src="dist/L.Control.Opacity.js"></script>
-    <link href="dist/L.Control.Opacity.css" rel="stylesheet" />
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="dist/leaflet.zoomhome.css"/>
+<script src="dist/leaflet.zoomhome.min.js"></script>
+      <link rel="stylesheet" href="dist/L.Control.HtmlLegend.css" />
+<script src="dist/L.Control.HtmlLegend.js"></script>
     <style>
 	#background {
           background: url("ian-usher-JPAfSd_acI8-unsplash.jpg") no-repeat center center fixed; 
@@ -60,6 +63,34 @@
           height: 0;
           overflow: hidden;
           width: 0;
+        }
+        @font-face {
+            font-family: 'icon';
+            src: url(data:font/ttf;base64,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);
+            font-weight: normal;
+            font-style: normal;
+        }
+
+	[class^="icon-"], [class*=" icon-"] {
+            font-family: 'icon' !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-eye-slash:before {
+            content: "\e903";
+        }
+
+        .icon-eye:before {
+            content: "\e904";
         }
     </style>
     <!-- Custom styles for this template -->

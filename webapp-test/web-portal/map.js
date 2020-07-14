@@ -1,4 +1,4 @@
-var map = L.map('map').setView([51.9449, 7.5724], 16);
+var map = L.map('map', {zoomControl: false}).setView([51.9449, 7.5724], 16);
 
 // add a OpenStreetMap layer
 var osm = new L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -37,6 +37,9 @@ var baseMaps = {
 };
 
 map.addControl(new L.Control.Fullscreen());
+
+var zoomHome = L.Control.zoomHome();
+zoomHome.addTo(map);
 
 var layerControl = new L.control.layers(baseMaps).addTo(map);
 
@@ -93,3 +96,57 @@ var riverline = L.tileLayer.wms("https://geovm-mundus-web.uni-muenster.de/geoser
     });
 
 layerControl.addOverlay(riverline, "River Line");
+
+ var htmlLegendBoundary = L.control.htmllegend({
+        position: 'bottomright',
+        legends: [{
+        name: 'Boundary',
+        layer: boundary,
+        opacity: 0.5,
+        elements: [{
+            html: ''
+        }]
+    }],
+        collapseSimple: true,
+        detectStretched: true,
+        visibleIcon: 'icon icon-eye',
+        hiddenIcon: 'icon icon-eye-slash'
+    })
+
+    map.addControl(htmlLegendBoundary);
+
+ var htmlLegendBounds = L.control.htmllegend({
+        position: 'bottomright',
+        legends: [{
+        name: 'Bounds',
+        layer: bounds,
+        opacity: 0.5,
+        elements: [{
+            html: ''
+        }]
+    }],
+        collapseSimple: true,
+        detectStretched: true,
+        visibleIcon: 'icon icon-eye',
+        hiddenIcon: 'icon icon-eye-slash'
+    })
+
+    map.addControl(htmlLegendBounds);
+
+ var htmlLegendRiverline = L.control.htmllegend({
+        position: 'bottomright',
+        legends: [{
+        name: 'River Line',
+        layer: riverline,
+        opacity: 0.5,
+        elements: [{
+            html: ''
+        }]
+    }],
+        collapseSimple: true,
+        detectStretched: true,
+        visibleIcon: 'icon icon-eye',
+        hiddenIcon: 'icon icon-eye-slash'
+    })
+
+    map.addControl(htmlLegendRiverline);
