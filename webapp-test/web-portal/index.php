@@ -5,7 +5,7 @@
   $pass = $_POST['password'];
 
   if ((($user != 'uas2020') || ($pass != 'CoronaIntervenedLife2020')) && ($_SESSION['signedIn'] != 'state_signed')) {
-    header('Location: http://geovm-mundus-web.uni-muenster.de/webapp-test/web-portal/signin');
+    header('Location: https://geovm-mundus-web.uni-muenster.de/web-portal/signin');
   }
   else {
     $_SESSION['signedIn'] = 'state_signed';
